@@ -1,0 +1,49 @@
+<!doctype html>
+<html ng-app="POPControllers">
+  <head>
+    <meta name="description" content="Angular Getting Started Controllers Example">
+    <meta name="author" content="Kevin Blanco">
+    <link href='http://fonts.googleapis.com/css?family=Arvo:700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor.min.js"></script>
+    <title>Angular - Controllers</title>
+  </head>
+
+  <body>
+     <div role="main">
+      <header class="hero-unit">
+        <div class="container">
+          <h1>TODOs simple list to show Controllers Example</h1>
+          <hr>
+        </div>
+      </header>
+      <div class="container">
+        <h2>TODO List</h2>
+
+        <!-- Here's our controller -->
+        <div ng-controller="TodosController">
+          <ul class="unstyled">
+            <li ng-repeat="todo in todos">
+              <input type="checkbox" ng-model="todo.done">
+              <span class="done-{{todo.done}}">{{todo.text}}</span>
+            </li>
+          </ul>
+          <br>
+
+          <form>
+            <input type="text" ng-model="todoText"  size="30" placeholder="Write your own todo here">
+            <button class="btn btn-info" ng-click="todoAdd()">Add</button>
+            <br>
+            <span> {{todoRemaining()}} of {{todos.length}} remaining</span>
+          [ <a href="" ng-click="todoDelete()">Delete ready TODOs</a> ]
+          </form>
+        </div>
+       <!--Controller Ends Here -->
+
+
+      </div>
+    </div>
+
+     <script src="js/app.min.js"></script>
+  </body>
+</html>
